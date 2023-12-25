@@ -1,0 +1,26 @@
+service ylog /system/bin/ylog
+    class main
+    socket ylog seqpacket 0666 ylog ylog
+    user root
+    disabled
+
+service ylog_force_startup /system/bin/ylog FORCE_STARTUP
+    class main
+    socket ylog seqpacket 0666 ylog ylog
+    user root
+    disabled
+
+on property:ro.bootmode=charger && property:ro.debuggable=1
+    mkdir /cache/ylog 0777
+    chmod 0777 /proc/kmsg
+    start ylog_force_startup
+
+on property:ro.bootmode=cali
+    mkdir /cache/ylog 0777
+    chmod 0777 /proc/kmsg
+    start ylog_force_startup
+
+on property:ro.bootmode=autotest
+    mkdir /cache/ylog 0777
+    chmod 0777 /proc/kmsg
+    start ylog_force_startup

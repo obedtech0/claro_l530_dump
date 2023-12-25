@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<operators version="1">
+    <!-- numeric: mcc + mnc -->
+    <!-- name: operator name -->
+
+    <!-- TRUE -->
+    <operator numeric="520000" name="true" />
+    <operator numeric="520004" name="true" />
+
+    <!-- DTAC -->
+    <operator numeric="520005" name="dtac" />
+    <operator numeric="520018" name="dtac" />
+
+    <!-- AIS -->
+    <operator numeric="520003" name="ais"/>
+
+    <!-- SMARTFREN -->
+    <operator numeric="510009" name="smartfren"/>
+    <operator numeric="510028" name="smartfren"/>
+
+    <!-- VODAFONE -->
+    <operator numeric="262002" name="vodafone"/>
+
+</operators>

@@ -1,0 +1,11 @@
+service ims_bridged /system/bin/ims_bridged
+    class main
+    user root
+
+on property:persist.sys.vilte.socket=ap
+    write /sys/module/ims_bridge/parameters/volte_video_apsk 1
+
+# If netd restart, the policy rules added by imsbr will be flushed
+# so restart ims_bridged to add these policy rules again!
+on property:init.svc.netd=restarting
+    restart ims_bridged

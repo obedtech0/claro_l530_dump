@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<performance>
+    <policy name="Memory">
+        <config name="MemoryConstant" >
+            <item ramsize="512">
+                <averageAppUss>20</averageAppUss>
+                <lowCpuLoad>30</lowCpuLoad>
+                <highCpuLoad>60</highCpuLoad>
+                <emergencyMemory>60</emergencyMemory>
+                <bigMemCriticalMemory>120</bigMemCriticalMemory>
+                <defaultCriticalMemory>95</defaultCriticalMemory>
+                <normalMemory>120</normalMemory>
+                <protect_lru_limit>30 40 0</protect_lru_limit>
+            </item>
+            <item ramsize="1024">
+                <averageAppUss>20</averageAppUss>
+                <lowCpuLoad>30</lowCpuLoad>
+                <highCpuLoad>60</highCpuLoad>
+                <emergencyMemory>170</emergencyMemory>
+                <bigMemCriticalMemory>200</bigMemCriticalMemory>
+                <defaultCriticalMemory>150</defaultCriticalMemory>
+                <normalMemory>300</normalMemory>
+                <protect_lru_limit>30 40 0</protect_lru_limit>
+            </item>
+            <item ramsize="2048">
+                <averageAppUss>20</averageAppUss>
+                <lowCpuLoad>30</lowCpuLoad>
+                <highCpuLoad>60</highCpuLoad>
+                <emergencyMemory>350</emergencyMemory>
+                <bigMemCriticalMemory>400</bigMemCriticalMemory>
+                <defaultCriticalMemory>600</defaultCriticalMemory>
+                <normalMemory>900</normalMemory>
+                <protect_lru_limit>30 40 0</protect_lru_limit>
+            </item>
+            <item ramsize="3072">
+                <averageAppUss>20</averageAppUss>
+                <lowCpuLoad>30</lowCpuLoad>
+                <highCpuLoad>60</highCpuLoad>
+                <emergencyMemory>400</emergencyMemory>
+                <bigMemCriticalMemory>450</bigMemCriticalMemory>
+                <defaultCriticalMemory>800</defaultCriticalMemory>
+                <normalMemory>1228</normalMemory>
+                <protect_lru_limit>60 80 0</protect_lru_limit>
+            </item>
+        </config>
+        <config name="MemoryScene">
+            <item scene="idle">
+                <action>reclaim</action>
+            </item>
+            <item scene="default">
+                <action>kill</action>
+            </item>
+            <item scene="BigMem">
+                <action>quickkill</action>
+            </item>
+            <item scene="Emergency">
+                <action>reclaimPersist</action>
+            </item>
+        </config>
+    </policy>
+    <policy name="Schedule">
+        <config name="SchedAdjustment" >
+            <item package="com.kiloo.subwaysurf">
+                <process>com.kiloo.subwaysurf</process>
+                <string-array name="threads">
+                   <string>UnityMain</string>
+                   <string>UnityGfxDeviceW</string>
+                </string-array>
+            </item>
+            <item package="com.tencent.mm">
+                <process>com.tencent.mm:appbrand0</process>
+                <string-array name="threads">
+                   <string>GLThread*</string>
+                </string-array>
+            </item>
+        </config>
+    </policy>
+</performance>
