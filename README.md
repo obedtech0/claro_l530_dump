@@ -1,0 +1,19 @@
+## sp9832e_fs097_go_project-user 8.1.0 OPM2.171019.012 33216 release-keys
+- Manufacturer: lanix
+- Platform: sp9832e
+- Codename: L530
+- Brand: Claro
+- Flavor: sp9832e_fs097_go_project-user
+- Release Version: 8.1.0
+- Kernel Version: 4.4.83
+- Id: OPM2.171019.012
+- Incremental: 33216
+- Tags: release-keys
+- CPU Abilist: armeabi-v7a,armeabi
+- A/B Device: false
+- Locale: en-US
+- Screen Density: undefined
+- Fingerprint: Claro/L530/L530:8.1.0/OPM2.171019.012/33216:user/release-keys
+- OTA version: 
+- Branch: sp9832e_fs097_go_project-user-8.1.0-OPM2.171019.012-33216-release-keys
+- Repo: claro_l530_dump
